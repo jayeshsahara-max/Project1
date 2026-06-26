@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello World</title>
+  <title>About</title>
   <style>
     :root {
       color-scheme: dark;
@@ -125,8 +125,8 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(4rem, 13vw, 8.75rem);
-      line-height: 0.92;
+      font-size: clamp(3rem, 10vw, 6.75rem);
+      line-height: 0.95;
       letter-spacing: 0;
       text-wrap: balance;
     }
@@ -142,39 +142,34 @@
     }
 
     p {
-      max-width: 560px;
+      max-width: 620px;
       margin: 26px auto 0;
       color: var(--muted);
       font-size: clamp(1rem, 2.2vw, 1.25rem);
       line-height: 1.7;
     }
 
-    .sparkles {
+    .actions {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      margin-top: 36px;
+      gap: 14px;
+      margin-top: 34px;
     }
 
-    .sparkles span {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
+    .button {
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .button.primary {
+      color: #06111e;
       background: var(--aqua);
-      box-shadow: 0 0 28px currentColor;
-      animation: pulse 1.8s ease-in-out infinite;
-    }
-
-    .sparkles span:nth-child(2) {
-      color: var(--gold);
-      background: var(--gold);
-      animation-delay: 0.2s;
-    }
-
-    .sparkles span:nth-child(3) {
-      color: var(--rose);
-      background: var(--rose);
-      animation-delay: 0.4s;
     }
 
     @keyframes shimmer {
@@ -184,18 +179,6 @@
 
       50% {
         background-position: 100% center;
-      }
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        transform: translateY(0) scale(0.85);
-        opacity: 0.5;
-      }
-
-      50% {
-        transform: translateY(-8px) scale(1.15);
-        opacity: 1;
       }
     }
 
@@ -220,18 +203,17 @@
 </head>
 <body>
   <nav class="site-nav" aria-label="Primary navigation">
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="about.html">About</a>
+    <a href="index.html">Home</a>
+    <a href="about.html" aria-current="page">About</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <main class="stage" aria-label="Hello world greeting">
-    <div class="eyebrow">Freshly minted</div>
-    <h1>Hello <span class="shine">World</span></h1>
-    <p>A tiny page with a little glass, glow, and motion, ready to open straight from this folder.</p>
-    <div class="sparkles" aria-hidden="true">
-      <span></span>
-      <span></span>
-      <span></span>
+  <main class="stage" aria-label="About this site">
+    <div class="eyebrow">About</div>
+    <h1>Small Site <span class="shine">Big Glow</span></h1>
+    <p>This little web project started as a polished hello world and now has room to grow. It keeps things simple: a clear page, a shared mood, and links that make the experience feel complete.</p>
+    <div class="actions">
+      <a class="button primary" href="contact.html">Contact</a>
+      <a class="button" href="index.html">Back Home</a>
     </div>
   </main>
 </body>
